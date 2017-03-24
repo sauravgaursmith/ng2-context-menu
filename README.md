@@ -97,6 +97,11 @@ You can define your custom context menu options as shown here ...
  'RENAME' etc. `targetElementInformation` represents the information of the element on which you are performing your 
  action. You can use `targetElementInformation` key to carry out Html DOM changes for that element.
  
+ If You pass invalid parameter to `AddContextMenuOptions`. You will get an error --
+ ```text
+ Error: Invalid parameters is passed to "AddContextMenuOptions". Goto docs: ...
+ ```
+ 
 ##### Add `[context-menu]` directive to the element on which you want to open context menu in your component `template`. 
 
 ```html
