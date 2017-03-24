@@ -1,6 +1,7 @@
 # ng2-context-menu
 An Angular 2 reusable component that provides custom context menu support. 
 ## I'm always Happy to help !!! 
+<img src="https://iconverticons.com/img/logo.png" width="48">
 
 ### Prerequisite 
        * Angular-cli: 1.0.0-beta.18 or higher
