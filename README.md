@@ -15,7 +15,7 @@ yarn add ng2-context-menu --save
 ```
 ### use
 
-Developers can use this module in angular 2 projects as built-in context menu support.
+Developers can use this module in angular 2 projects as custom context menu support.
 Steps to use :
 
 ##### Add `Ng2ContextMenuModule` to the module in which your `component` is declared.
