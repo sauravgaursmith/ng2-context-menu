@@ -1,0 +1,8 @@
+<div class="__context-menu__ " id="context-menu-container" [ngStyle]="getMouseLocation">
+  <ul>
+    <li *ngFor="let action of contextMenuOptions" (click)="contextItemListener(action)">
+      <span class="__context-menu-option"><img src="{{action.iconPath}}"></span>
+      <p class="__context-menu-option">{{action.action}}</p>
+    </li>
+  </ul>
+</div>

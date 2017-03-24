@@ -1,0 +1,28 @@
+{
+  "name": "ng2-context-menu",
+  "version": "1.0.0",
+  "description": "An Angular 2 Context Menu Package.",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "ng2-context-menu",
+    "context-menu",
+    "contextmenu"
+  ],
+  "author": {
+    "name": "Saurav Singh",
+    "email": "saurav.gaur011@gmail.com",
+    "url": "https://github.com/sauravgaursmith"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@angular/common": "~2.1.0",
+    "@angular/core": "~2.1.0",
+    "rxjs": "5.0.0-beta.12"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sauravgaursmith/ng2-context-menu.git"
+  }
+}
