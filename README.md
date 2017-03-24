@@ -26,7 +26,7 @@ import {Ng2ContextMenuModule} from "ng2-context-menu";
 @NgModule({
  ...
   imports: [
-    Ng2ContextMenuModule  // like it.
+    Ng2ContextMenuModule  // like this.
   ],
  ...
 })
