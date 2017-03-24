@@ -82,7 +82,8 @@ You can define your custom context menu options as shown here ...
     * that you have done by clickig an context menu option.
     */
     ContextMenuDataService.OnMenuClick().subscribe(actionInfo => {
-      console.log(actionInfo);
+      console.log(`Action: '${actionInfo.action}' Element: '${actionInfo.targetElementInformation.nodeName}'`);
+      console.log(`Information : ${JSON.stringify(actionInfo.information)}`);
       // Write your logic here ...
     });
 
