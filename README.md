@@ -36,7 +36,7 @@ export class AppModule {
 
 ```
 #### Define your `Context Menu` options in your component `.ts` file
-You can define your custom context menu options as shown here ...
+You can define your custom context menu options as shown here. Please read comments carefully.
  ```js
  import {ContextMenuDataService} from "ng2-context-menu";
  ...
