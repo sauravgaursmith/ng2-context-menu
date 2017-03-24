@@ -1,7 +1,7 @@
 # ng2-context-menu
 An Angular 2 reusable component that provides custom context menu support. 
 ## I'm always Happy to help !!! 
-<img src="" alt="Image" width="48">
+<img src="https://github.com/sauravgaursmith/ng2-context-menu/blob/master/ng2-context-menu.png" alt="Image" width="150">
 
 ### Prerequisite 
        * Angular-cli: 1.0.0-beta.18 or higher
@@ -36,7 +36,7 @@ export class AppModule {
 
 ```
 #### Define your `Context Menu` options in your component `.ts` file
-You can define your custom context menu options as shown here ...
+You can define your custom context menu options as shown here. Please read comments carefully.
  ```js
  import {ContextMenuDataService} from "ng2-context-menu";
  ...
