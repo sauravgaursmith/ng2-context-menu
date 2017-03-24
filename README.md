@@ -1,6 +1,6 @@
 # ng2-context-menu
-Please wait ...
-Documentation is being prepared. Most probably, we will provide it by the EOD on March 24, 2017 (Indian Time Zone).
+An Angular 2 reusable component that provides custom context menu support. 
+## I'm always Happy to help !!! 
 
 ### Prerequisite 
        * Angular-cli: 1.0.0-beta.18 or higher
@@ -34,6 +34,89 @@ export class AppModule {
 }
 
 ```
+#### Define your `Context Menu` options in your component `.ts` file
+You can define your custom context menu options as shown here ...
+ ```js
+ import {ContextMenuDataService} from "ng2-context-menu";
+ ...
+ 
+ // contructor function 
+  constructor(private  ContextMenuDataService: ContextMenuDataService) {
+
+  
+   /* AddContextMenuOptions 
+    * ----------------------
+    * This method accepts an array of context menu options. 
+    * Each option is just an object having to properties -- `iconPath` and `action`.
+    * `iconPath` is path to the icon. This icon appears as menu option image/icon.
+    * `action` is the just simple text that apprears as the name of action.
+    * NOTE: You can provide any valid iconPath. But is advisable to keep your images/icons
+    * in 'assets' folder.  
+    */
+    ContextMenuDataService.AddContextMenuOptions([
+      {
+        iconPath: 'assets/action/copy.png',
+        action: 'COPY'
+      },
+      {
+        iconPath: 'assets/action/edit.png',
+        action: 'EDIT'
+      },
+      {
+        iconPath: 'assets/action/cut.png',
+        action: 'CUT'
+      },
+      {
+        iconPath: 'assets/action/detail.png',
+        action: 'DETAIL'
+      },
+      {
+        iconPath: 'assets/action/search.png',
+        action: 'SEARCH'
+      }
+    ]);
+
+   /* OnMenuClick 
+    * ----------------------
+    * This method listens every click on context menu. This method provides action information 
+    * that you have done by clickig an context menu option.
+    */
+    ContextMenuDataService.OnMenuClick().subscribe(actionInfo => {
+      console.log(actionInfo);
+      // Write your logic here ...
+    });
+
+  }
+ 
+ ```
+ MOST IMPORTANT: Here, When you click on a context menu option, You get action information in `OnMenuClick` function
+ as `actionInfo` object. If you log this object, It will have three properties/keys -- `information`, `action`
+ and `targetElementInformation`. `information` represents the information that you pass to the `[context-menu]` 
+ directive in your component's `template`. `action` represents the custom action you clicked like - 'COPY', 'CUT' and
+ 'RENAME' etc. `targetElementInformation` represents the information of the element on which you are performing your 
+ action. You can use `targetElementInformation` key to carry out Html DOM changes for that element.
+ 
+##### Add `[context-menu]` directive to the element on which you want to open context menu in your component `template`. 
+
+```html
+<!-- You can apply [context-menu] directive on any valid HTML 5 element -->
+<div [context-menu]="{option: 1}"> Right Click Me To Open Context Menu </div>
+<p [context-menu]="'This is a p tag.'"> Right Click Me To Open Context Menu </p>
+<p [context-menu]> Right Click Me To Open Context Menu </p>
+ ```
+Here, You can provide any type of information to `[context-menu]`. When, you will click a context menu, You can get this     information. 
+
+##### Add `<ng2-context-menu></ng2-context-menu>` selector in your `template` file. 
+
+```html
+<!-- You can apply [context-menu] directive on any valid HTML 5 element -->
+<div [context-menu]="{option: 1}"> Right Click Me To Open Context Menu </div>
+<p [context-menu]="'This is a p tag.'"> Right Click Me To Open Context Menu </p>
+<p [context-menu]> Right Click Me To Open Context Menu </p>
+
+<ng2-context-menu></ng2-context-menu>
+ ```
+ 
 ##### Add the following css to your component `.css` file. 
 ```css
 :host >>> .__context-menu__ {
@@ -77,19 +160,6 @@ export class AppModule {
 
 ```
 You can customize this css according to your need.
-
-##### Add `[context-menu]` directive to the element on which you want to open context menu in your component `template`. 
-
-```html
-<!-- You can apply [context-menu] directive on any valid HTML 5 element -->
-<div [context-menu]="{option: 1}"> Right Click Me To Open Context Menu </div>
-<p [context-menu]="'This is a p tag.'"> Right Click Me To Open Context Menu </p>
-<p [context-menu]> Right Click Me To Open Context Menu </p>
- ```
- Here, You can provide any type of information to [context-menu]. When, you will click a context menu, You can get this     information.
- 
-### Define context menu options 
- // To be continued ...
  
 ### Congrats
 This is all about this module.
