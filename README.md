@@ -1,8 +1,8 @@
 # ng2-context-menu
-An Angular 2 reusable component that provides custom context menu support.
+An Angular 2 reusable component that provides Custom Context Menu support.
 
 ### Snapshot
-![alt snapshot](https://github.com/sauravgaursmith/ng2-context-menu/blob/master/ng2-context-menu.png)
+![alt snapshot](./ng2-context-menu.png)
 
 ### Prerequisite 
        * Angular-cli: 1.0.0-beta.18 or higher
@@ -37,7 +37,7 @@ export class AppModule {
 
 ```
 #### Define your `Context Menu` options in your component `.ts` file
-You can define your custom context menu options as shown here. Please read comments carefully.
+You can define your `Custom Context Menu` options as shown here. Please, read comments carefully.
  ```js
  import {ContextMenuDataService} from "ng2-context-menu";
  ...
@@ -48,10 +48,10 @@ You can define your custom context menu options as shown here. Please read comme
   
    /* AddContextMenuOptions 
     * ----------------------
-    * This method accepts an array of context menu options. 
-    * Each option is just an object having to properties -- `iconPath` and `action`.
+    * This method accepts an array of Context Menu options. 
+    * Each option is just an object having two properties -- `iconPath` and `action`.
     * `iconPath` is path to the icon. This icon appears as menu option image/icon.
-    * `action` is the just simple text that apprears as the name of action.
+    * `action` is the just simple text that appears as the name of action.
     * NOTE: You can provide any valid iconPath. But is advisable to keep your images/icons
     * in 'assets' folder.  
     */
@@ -80,8 +80,8 @@ You can define your custom context menu options as shown here. Please read comme
 
    /* OnMenuClick 
     * ----------------------
-    * This method listens every click on context menu. This method provides action information 
-    * that you have done by clickig an context menu option.
+    * This method listens every click on Context Menu. This method provides action information 
+    * that you have done by clickig on a Context Menu option.
     */
     ContextMenuDataService.OnMenuClick().subscribe(actionInfo => {
       console.log(`Action: '${actionInfo.action}' Element: '${actionInfo.targetElementInformation.nodeName}'`);
@@ -92,12 +92,11 @@ You can define your custom context menu options as shown here. Please read comme
   }
  
  ```
- MOST IMPORTANT: Here, When you click on a context menu option, You get action information in `OnMenuClick` function
+ *NOTE:* Here, When you click on a Context Menu option, You get action information in `OnMenuClick` function
  as `actionInfo` object. If you log this object, It will have three properties/keys -- `information`, `action`
- and `targetElementInformation`. `information` represents the information that you pass to the `[context-menu]` 
- directive in your component's `template`. `action` represents the custom action you clicked like - 'COPY', 'CUT' and
- 'RENAME' etc. `targetElementInformation` represents the information of the element on which you are performing your 
- action. You can use `targetElementInformation` key to carry out Html DOM changes for that element.
+ and `targetElementInformation`. 
+     *`information` represents the information that you pass to the `[context-menu]` directive in your component `template`.      *`action` represents the custom action you clicked like - 'COPY', 'CUT' and 'RENAME' etc.
+     *`targetElementInformation` represents the information of the element on which you are performing your action. You can        use `targetElementInformation` key to carry out Html DOM changes for that element.
  
  If You pass invalid parameter to `AddContextMenuOptions`. You will get an error --
  ```text
@@ -112,7 +111,7 @@ You can define your custom context menu options as shown here. Please read comme
 <p [context-menu]="'This is a p tag.'"> Right Click Me To Open Context Menu </p>
 <p [context-menu]> Right Click Me To Open Context Menu </p>
  ```
-Here, You can provide any type of information to `[context-menu]`. When, you will click a context menu, You can get this     information. 
+Here, You can provide any type of information to `[context-menu]`. When, you will click a Context Menu, You can get this     information. 
 
 ##### Add `<ng2-context-menu></ng2-context-menu>` selector in your `template` file. 
 
